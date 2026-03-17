@@ -20,7 +20,7 @@ The pipeline answers three questions in sequence:
 
 1. **Is the experimental design valid?** (balance, parallel trends, placebo tests)
 2. **Which estimators can be trusted, and why?** (spillover flags, RMSPE gates, LOO stability)
-3. **Was the campaign worth the spend?** (iROAS with CI, break-even probability, gated recommendation)
+3. **Was the campaign worth the spend? (Business Question)** (iROAS with CI, break-even probability, gated recommendation)
 
 ---
 
@@ -74,7 +74,7 @@ while CUPED, SCM, and Bayes converge. That convergence *is* the finding.
 ## The SCM debugging story
 
 The initial SCM implementation produced a lift estimate of **1,714,415** — an
-**18× overestimate** of the ground truth of 91,540.
+**18× overestimate** of the ground truth of 91,540. **Debugging write-up:** [Building a Production-Grade Geo Incrementality System: How Synthetic Control Failed by 18× — and What Fixed It →](https://medium.com/@a.takeuchi121/building-a-production-grade-geo-incrementality-system-how-synthetic-control-failed-by-18-and-bd497ebefa08)
 
 **Root cause:** Raw unscaled donor series were passed directly to the constrained
 weight optimizer. The donor pool aggregate was 3–5× larger in absolute magnitude
@@ -282,20 +282,20 @@ not to make all methods look good.
 
 ---
 
-## What a reviewer should look for
+## What to look for
 
-**The SCM debugging section** (notebook 01, section 5.4) demonstrates end-to-end
+- **The SCM debugging section** (notebook 01, section 5.4) demonstrates end-to-end
 numerical debugging: symptom identification → root cause isolation → fix →
 validation. The fix is three lines of code. The diagnosis required understanding
 the geometry of constrained optimization under scale mismatch and the difference
 between optimizer collapse and optimizer failure.
 
-**The estimator validity framework** demonstrates that knowing *when not to trust
+- **The estimator validity framework** demonstrates that knowing *when not to trust
 a model* is more valuable than knowing how to run one. DiD produces a negative
 estimate on a positive ground truth. The framework catches it automatically via
 a spillover flag that was set before any model was run.
 
-**The business reporting layer** (notebook 02) demonstrates the bridge between
+- **The business reporting layer** (notebook 02) demonstrates the bridge between
 statistical output and decision-grade reporting that is typically absent from
 academic portfolios: uncertainty propagation into financial metrics, rule-based
 recommendation logic, and an explicit risk flag register that updates automatically
