@@ -243,20 +243,6 @@ A 20%+ shift would require pool redesign.
 
 ---
 
-## How to run
-
-```bash
-# 1. Install dependencies
-pip install -r requirements.txt
-
-# 2. Run the full pipeline in order
-jupyter notebook notebooks/00_experimental_design.ipynb
-jupyter notebook notebooks/01_causal_estimation.ipynb
-jupyter notebook notebooks/02_business_reporting.ipynb
-
-# Or headless via CLI
-PYTHONPATH=src python scripts/run_quick_check.py
-```
 
 Notebooks are designed to be run top-to-bottom. Each notebook saves its outputs
 to `data/` so downstream notebooks can run independently without re-executing
