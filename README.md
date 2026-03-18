@@ -1,5 +1,4 @@
-# Spillover-Aware-Geo-Incrementality-Experiment-Pipeline
-# Geo Incrementality Measurement — End-to-End Causal Inference Pipeline
+# Spillover Aware Geo Incrementality Measurement — End-to-End Causal Inference Pipeline
 
 > A production-style geo experiment framework implementing five causal estimators,
 > a spillover-aware validity gate, and a decision-grade business reporting layer.
