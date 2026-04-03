@@ -47,6 +47,10 @@ enabling iROAS bounds and break-even probability computation.
 | P(iROAS > 1) | 0.0% |
 | **Recommendation** | **PAUSE ⚠️** |
 
+<p align="center">
+  <img src="image/final_reccomendation.png" width="800" title="Final Recommendation">
+</p>
+<p align="center"><i>Figure: Final Recommendation Summary</i></p>
 ---
 
 ## Why five estimators
