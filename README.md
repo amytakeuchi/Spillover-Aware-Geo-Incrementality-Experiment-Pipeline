@@ -8,6 +8,7 @@
 ---
 
 ## What this project does
+Paid social campaigns are easy to run and hard to measure. Attribution tools overcount. Last-click models ignore cannibalization. Aggregate sales trends conflate campaign effects with seasonality. The only credible answer is a **geo experiment** with a **rigorous causal estimator** 
 
 This project measures the **true incremental lift** of a paid social campaign across
 60 geographic markets. It does not stop at a single model. It runs five estimators in
